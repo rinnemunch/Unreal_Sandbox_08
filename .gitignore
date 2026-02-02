@@ -11,4 +11,11 @@ Saved
 *.sln
 *.suo
 *.xcodeproj
-*.xcworkspace
+*.xcworkspace 
+
+# Starter Content
+Content/StarterContent/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
