@@ -42,3 +42,45 @@
 ## 🚀 Result
 
 A clean, input-driven Blueprint system that demonstrates how functions manage state, accept inputs, return values, and drive both gameplay logic and UI feedback. This project focuses on clarity, predictability, and real-world Blueprint function usage without unnecessary complexity.
+
+--- 
+
+# Project 2 – Mixamo First Person Arms Pipeline
+
+## 🖼️ Preview
+
+![Mixamo FP Arms](Media/2.gif)
+
+## 🧱 Features
+
+**Project Setup**
+
+- Unreal Engine 5.5.4 project created using the First Person Template
+- Project scoped strictly for animation and mesh validation
+- No gameplay logic or systems added beyond default template behavior
+
+**Mixamo Character Selection**
+
+- Character selected based on arm proportions suitable for first person view
+- Single test animation chosen to validate the pipeline
+- Character downloaded using default Mixamo FBX settings with skin and animation
+
+**Blender Arm Extraction**
+
+- Mixamo FBX imported into Blender 5.0.1
+- Full body mesh edited to isolate arm geometry only
+- Skeleton preserved to maintain animation compatibility
+- Unwanted body geometry removed in Edit Mode for clean arm mesh
+
+**Unreal Engine Import and Validation**
+
+- Edited arm mesh exported from Blender as FBX
+- Arms imported into Unreal Engine for testing
+- Animation sequence previewed directly to validate mesh and skeleton
+- Default First Person arms replaced with custom Blender-extracted arms
+- Animation assigned directly without Animation Blueprint for simplicity
+- Transform adjusted to align arms correctly in first person view
+
+## 🚀 Result
+
+A clean and flexible foundation for custom first person animations, free from reliance on the default template arms. This setup confirms that Mixamo animations and Blender-edited meshes can be reliably used in a first person context, enabling future expansion into sprinting, blend spaces, and more advanced animation systems.
