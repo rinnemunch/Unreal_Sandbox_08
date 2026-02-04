@@ -84,3 +84,54 @@ A clean, input-driven Blueprint system that demonstrates how functions manage st
 ## 🚀 Result
 
 A clean and flexible foundation for custom first person animations, free from reliance on the default template arms. This setup confirms that Mixamo animations and Blender-edited meshes can be reliably used in a first person context, enabling future expansion into sprinting, blend spaces, and more advanced animation systems.
+
+--- 
+
+# Project 3 – Vehicle Weapons and Destruction
+
+## 🖼️ Preview
+
+![Vehicle Weapons and Destruction](Media/3.gif)
+
+## 🧱 Features
+
+**Vehicle-Mounted Weapon System**
+
+- Weapon mesh mounted directly to an existing Chaos Vehicle
+- Dedicated **Muzzle** scene component used as a projectile spawn point
+- Fire input handled through Enhanced Input with a digital action
+
+**Projectile Blueprint**
+
+- Custom **BP_Bullet** actor with separate collision and visual mesh
+- Projectile Movement component with high-speed forward velocity
+- Bounce enabled for ricochet-style impacts
+- Emissive bullet material for clear visual feedback
+
+**Physics Impact Logic**
+
+- On-hit logic gated with Do Once to prevent repeated force application
+- Physics impulse applied based on projectile velocity
+- Impulse applied at hit location for more natural reactions
+
+**Chaos Destruction Integration**
+
+- Chaos **FS_MasterField** spawned at impact point
+- High strain magnitude applied to guarantee visible fracture
+- Field triggered immediately to break Geometry Collections on contact
+
+**Impact Feedback**
+
+- Explosion particle effect spawned at hit location
+- Impact sound played on collision
+- Muzzle flash and firing sound triggered when weapon fires
+
+**Destructible Targets**
+
+- Geometry Collections created from simple meshes
+- Reduced damage thresholds for easier breakage
+- Removal on Sleep enabled to clean up fractured debris
+
+## 🚀 Result
+
+A fully functional vehicle-mounted weapon system that fires high-speed projectiles capable of applying physics force and destroying Chaos Geometry Collections in real time while driving.
