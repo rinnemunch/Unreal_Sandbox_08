@@ -134,4 +134,43 @@ A clean and flexible foundation for custom first person animations, free from re
 
 ## 🚀 Result
 
-A fully functional vehicle-mounted weapon system that fires high-speed projectiles capable of applying physics force and destroying Chaos Geometry Collections in real time while driving.
+A fully functional vehicle-mounted weapon system that fires high-speed projectiles capable of applying physics force and destroying Chaos Geometry Collections in real time while driving. 
+
+--- 
+
+# Project 4 – Chaos Vehicle Visual Wheel Stance System
+
+## 🖼️ Preview
+
+![Chaos Vehicle Wheel Stance](Media/4.gif)
+
+## 🧱 Features
+
+**Cosmetic Wheel Camber Control**
+
+- Wheel camber applied using **Transform (Modify) Bone** nodes in the wheel Animation Blueprint  
+- Rotation applied in **Parent Bone Space** to maintain clean skeletal behavior  
+- Fully visual implementation with **no impact on Chaos Vehicle physics or handling**
+
+**Lateral Wheel Shift (Track Width Adjustment)**
+
+- Shared float variable controls lateral wheel offset  
+- Translation applied per wheel bone for visual stance width  
+- Vector negation used to mirror offsets correctly between left and right sides
+
+**Per-Side Mirroring Logic**
+
+- Single camber and shift values reused across all wheels  
+- Rotator inversion used to flip camber direction per side  
+- Clean setup avoids redundant variables and keeps the system extensible
+
+**Ordered Bone Modification Chain**
+
+- Wheel bones modified in a controlled, sequential chain  
+- Front and rear wheels processed independently  
+- Reroute nodes used to maintain readability and clean data flow in the Anim Graph
+
+## 🚀 Result
+
+A clean, extensible visual stance system that allows Chaos Vehicles to be cosmetically customized using wheel bone animation. This setup provides precise control over camber and track width while keeping vehicle physics untouched, making it ideal for stylized builds, customization systems, or future extensions like drift and ride height tuning.
+
