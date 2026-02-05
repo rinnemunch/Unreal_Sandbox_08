@@ -174,3 +174,51 @@ A fully functional vehicle-mounted weapon system that fires high-speed projectil
 
 A clean, extensible visual stance system that allows Chaos Vehicles to be cosmetically customized using wheel bone animation. This setup provides precise control over camber and track width while keeping vehicle physics untouched, making it ideal for stylized builds, customization systems, or future extensions like drift and ride height tuning.
 
+--- 
+
+# Project 5 – Interface Wizard: Capability-Based Interaction System
+
+## 🖼️ Preview
+
+![Interface Wizard](Media/5.gif)
+
+## 🧱 Features
+
+**Blueprint Interface Design**
+
+- Uses **BPI_Scalable** to define a capability rather than an actor type  
+- Interface exposes a single Grow/Shrink function with a float input  
+- World actors interact without casting or class checks  
+
+**Player Interface Implementation**
+
+- Player character implements BPI_Scalable  
+- Scale changes routed through a dedicated size change function  
+- Current scale tracked internally and updated incrementally  
+- Scale values clamped to prevent extreme sizes  
+
+**Wizard Interaction Actors**
+
+- Increase Wizard applies positive scale change on overlap  
+- Decrease Wizard applies negative scale change on overlap  
+- Collision-based interaction using sphere trigger  
+- Interface presence checked before sending requests  
+- Non-compatible actors safely ignored with debug feedback  
+
+**Wandering AI Integration**
+
+- Wandering AI optionally implements the same interface  
+- AI responds to wizards using identical logic as the player  
+- No changes required to wizard behavior  
+- Demonstrates shared interaction across player and AI  
+
+**Capability-Based Gameplay Pattern**
+
+- World logic operates on supported behavior, not actor identity  
+- Actors fully control how they respond to interface requests  
+- Scales cleanly to players, AI, or future interactable actors  
+
+## 🚀 Result
+
+A reusable interaction system driven entirely by Blueprint Interfaces.  
+World actors apply effects without knowing who they interact with, and only actors that opt into the capability respond. This pattern cleanly separates interaction intent from implementation and works consistently across players and AI.
