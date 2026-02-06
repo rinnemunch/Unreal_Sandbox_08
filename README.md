@@ -222,3 +222,51 @@ A clean, extensible visual stance system that allows Chaos Vehicles to be cosmet
 
 A reusable interaction system driven entirely by Blueprint Interfaces.  
 World actors apply effects without knowing who they interact with, and only actors that opt into the capability respond. This pattern cleanly separates interaction intent from implementation and works consistently across players and AI.
+
+--- 
+
+# Project 6 – First Person Blend Space Locomotion
+
+## 🖼️ Preview
+
+![Project 6](Media/6.gif)
+
+## 🧱 Features
+
+**First Person Character Blueprint**
+
+- Custom `BP_FPCharacter` built from a blank template
+- Camera component with controller pitch rotation enabled
+- Isolated first person arms mesh attached to the camera
+- Clean movement defaults with scalable speed values
+
+**Enhanced Input System**
+
+- Dedicated `IMC_Default` input mapping context
+- Axis-based movement actions for forward/backward and strafing
+- 2D camera look input using mouse XY with corrected vertical inversion
+- Boolean sprint action driving temporary speed changes
+
+**Movement and Sprint Logic**
+
+- Camera-relative movement using control rotation vectors
+- Smooth walk and sprint transitions by modifying max walk speed
+- No hard-coded state checks or animation toggles
+
+**Animation Blueprint Setup**
+
+- Arms-only Animation Blueprint bound to a custom skeleton
+- Cached reference to the character for safe data access
+- Real-time speed calculation using horizontal velocity length
+
+**Speed Driven Blend Space**
+
+- 1D Blend Space driven purely by character movement speed
+- Idle, walk, and sprint animations aligned to actual speed values
+- Smoothing with ease in/out blending for natural transitions
+- No animation state machine required
+
+## 🚀 Result
+
+A clean and scalable first person locomotion system driven entirely by real movement speed.  
+The setup avoids rigid animation states, making it easy to extend with additional movement types, weapon animations, or camera effects without refactoring the core logic.
